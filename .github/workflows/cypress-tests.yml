@@ -28,7 +28,7 @@ jobs:
       run: npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=results/test-results.xml
 
     - name: Upload test results
-      uses: actions/upload-artifact@v3.1.0
+      uses: actions/upload-artifact@v3
       with:
         name: cypress-test-results
         path: results/test-results.xml
