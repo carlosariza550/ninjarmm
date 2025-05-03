@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="11.253" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-05-03T03:49:18" tests="0" file="cypress/e2e/login.spec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="NinjaRMM Login Functionality" timestamp="2025-05-03T03:49:18" tests="0" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login Page Elements" timestamp="2025-05-03T03:49:18" tests="1" time="3.187" failures="0">
+    <testcase name="NinjaRMM Login Functionality Login Page Elements Verify all required elements are present" time="3.168" classname="Verify all required elements are present">
+    </testcase>
+  </testsuite>
+  <testsuite name="Login Functionality" timestamp="2025-05-03T03:49:21" tests="2" time="3.065" failures="0">
+    <testcase name="NinjaRMM Login Functionality Login Functionality Successful login with valid credentials" time="1.343" classname="Successful login with valid credentials">
+    </testcase>
+    <testcase name="NinjaRMM Login Functionality Login Functionality Error message for invalid credentials" time="1.645" classname="Error message for invalid credentials">
+    </testcase>
+  </testsuite>
+  <testsuite name="Input Field Validations" timestamp="2025-05-03T03:49:24" tests="3" time="3.341" failures="0">
+    <testcase name="NinjaRMM Login Functionality Input Field Validations Email field validation" time="0.686" classname="Email field validation">
+    </testcase>
+    <testcase name="NinjaRMM Login Functionality Input Field Validations Invalid email format" time="1.293" classname="Invalid email format">
+    </testcase>
+    <testcase name="NinjaRMM Login Functionality Input Field Validations Password field validation" time="1.276" classname="Password field validation">
+    </testcase>
+  </testsuite>
+  <testsuite name="Other links" timestamp="2025-05-03T03:49:27" tests="2" time="1.644" failures="0">
+    <testcase name="NinjaRMM Login Functionality Other links Redirects to reset password page" time="1.104" classname="Redirects to reset password page">
+    </testcase>
+    <testcase name="NinjaRMM Login Functionality Other links Redirects to register page" time="0.479" classname="Redirects to register page">
+    </testcase>
+  </testsuite>
+</testsuites>
