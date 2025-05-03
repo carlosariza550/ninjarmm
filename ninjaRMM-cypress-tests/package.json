@@ -1,0 +1,17 @@
+{
+  "name": "ninjarmm-cypress-tests",
+  "version": "1.0.0",
+  "description": "Cypress end-to-end tests for the NinjaRMM application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "test:headless": "cypress run"
+  },
+  "devDependencies": {
+    "@types/cypress": "^0.1.6",
+    "cypress": "^14.3.2",
+    "mocha-junit-reporter": "^2.2.1"
+  },
+  "author": "",
+  "license": "MIT"
+}

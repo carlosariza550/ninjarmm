@@ -1,0 +1,13 @@
+{
+  "validUser": {
+    "email": "testmail0502@yopmail.com",
+    "password": "Test123*"
+  },
+  "invalidUser": {
+    "email": "invalid@example.com",
+    "password": "InvalidPassword123"
+  },
+  "emailValidation": {
+    "invalidFormat": "invalid-email"
+  }
+}

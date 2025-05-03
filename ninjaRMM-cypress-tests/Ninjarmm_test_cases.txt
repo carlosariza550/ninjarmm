@@ -1,0 +1,183 @@
+Feature: Login Page Elements
+
+  Scenario: Verify all required elements are present
+    Given I navigate to the NinjaRMM Login Page
+    Then I should see the "Email" input field
+    And I should see the "Password" input field
+    And I should see the "Keep me signed in" checkbox field
+    And I should see the "Login" button
+    And I should see the "Forgot Password" link
+    And I should see the "Register" link
+
+Feature: Login Functionality
+
+  Scenario: Successful login with valid credentials
+    Given I navigate to the NinjaRMM Login Page
+    When I enter a valid email
+    And I enter a valid password
+    And I click the "Login" button
+    Then I should be redirected to the dashboard page
+
+  Scenario: Error message for invalid credentials
+    Given I navigate to the NinjaRMM Login Page
+    When I enter an invalid email
+    And I enter an invalid password
+    And I click the "Login" button
+    Then I should see an error message "Invalid email or password"
+
+Feature: Input Field Validations
+
+  Scenario: Email field validation
+    Given I navigate to the NinjaRMM Login Page
+    When I leave the "Email" input field empty
+    And I click the "Login" button
+    Then I should see an error message
+
+  Scenario: Invalid email format
+    Given I navigate to the NinjaRMM Login Page
+    When I enter "invalid-email" in the "Email" input field
+    And I enter a valid password
+    And I click the "Login" button
+    Then I should see an error message
+
+  Scenario: Password field validation
+    Given I navigate to the NinjaRMM Login Page
+    When I leave the "Password" input field empty
+    And I click the "Login" button
+    Then I should see an error message
+
+Feature: Forgot Password Functionality
+
+  Scenario: Navigate to the Forgot Password page
+    Given I navigate to the NinjaRMM Login Page
+    When I click the "Forgot Password" link
+    Then I should be redirected to the "Forgot Password" page
+
+  Scenario: Verify all required elements on the Forgot Password page
+    Given I navigate to the "Forgot Password" page
+    Then I should see the "Type of identification" input field
+    And I should see the "Email" input field
+    And I should see the "Submit" button
+
+  Scenario: Submit valid email for password reset
+      Given I navigate to the "Forgot Password" page
+      When I enter a valid email in the "Email" input field
+      And I click the "Submit" button
+      Then I should see a confirmation message "Password reset email sent"
+
+  Scenario: Submit invalid email for password reset
+      Given I navigate to the "Forgot Password" page
+      When I enter an invalid email in the "Email" input field
+      And I click the "Submit" button
+      Then I should see an error message "Invalid email address"
+
+  Scenario: Submit empty email field
+      Given I navigate to the "Forgot Password" page
+      When I leave the "Email" input field empty
+      And I click the "Submit" button
+      Then I should see an error message
+
+  Scenario: Submit valid text for password reset
+      Given I navigate to the "Forgot Password" page
+      When I choose the text option in the "Type of identification" input field
+      And I enter a valid email in the "Email" input field
+      And I enter a valid last four digits in the phone digits input field
+      And I click the "Submit" button
+      Then I should see a confirmation message "Password reset email sent"
+
+  Scenario: Submit invalid text for password reset
+      Given I navigate to the "Forgot Password" page
+      When I choose the text option in the "Type of identification" input field
+      And I enter a valid email in the "Email" input field
+      And I enter an invalid last four digits in the phone digits input field
+      And I click the "Submit" button
+      Then I should see an error message
+
+Feature: Register Functionality
+
+  Scenario: Navigate to the Register page
+    Given I navigate to the NinjaRMM Login Page
+    When I click the "Register" link
+    Then I should be redirected to the "Register" page
+
+  Scenario: Verify all required elements on the Register page
+    Given I navigate to the "Register" page
+    Then I should see the "First Name" input field
+    And I should see the "Last Name" input field
+    And I should see the "Organization" input field
+    And I should see the "Email" input field
+    And I should see the "Password" input field
+    And I should see the "Confirm Password" input field
+    And I should see the "Phone" input field
+    And I should see the "Language" list field
+    And I should see the "Register" button
+    And I should see a link to return to the Login page
+    And I should see a link to request activation
+
+  Scenario: Successful registration with valid details
+    Given I navigate to the "Register" page
+    When I enter a valid first name in the "First Name" input field
+    And I enter a valid last name in the "Last Name" input field
+    And I enter a valid organization name in the "Organization" input field
+    And I enter a valid email in the "Email" input field
+    And I enter a valid password in the "Password" input field
+    And I enter the same password in the "Confirm Password" input field
+    And I enter a valid phone number in the "Phone" input field
+    And I select a language from the "Language" list field
+    And I click the "Register" button
+    Then I should see a confirmation message "Registration successful"
+
+  Scenario: Registration with missing required fields
+    Given I navigate to the "Register" page
+    When I leave the "First Name" input field empty
+    And I leave the "Last Name" input field empty
+    And I leave the "Organization" input field empty
+    And I leave the "Email" input field empty
+    And I leave the "Password" input field empty
+    And I leave the "Confirm Password" input field empty
+    And I leave the "Phone" input field empty
+    And I click the "Register" button
+    Then I should see error messages for all required fields
+
+  Scenario: Registration with mismatched passwords
+    Given I navigate to the "Register" page
+    When I enter a valid first name in the "First Name" input field
+    And I enter a valid last name in the "Last Name" input field
+    And I enter a valid organization name in the "Organization" input field
+    And I enter a valid email in the "Email" input field
+    And I enter a valid password in the "Password" input field
+    And I enter a different password in the "Confirm Password" input field
+    And I click the "Register" button
+    Then I should see an error message "Passwords do not match"
+
+  Scenario: Registration with invalid email format
+    Given I navigate to the "Register" page
+    When I enter a valid first name in the "First Name" input field
+    And I enter a valid last name in the "Last Name" input field
+    And I enter a valid organization name in the "Organization" input field
+    And I enter an invalid email in the "Email" input field
+    And I enter a valid password in the "Password" input field
+    And I enter the same password in the "Confirm Password" input field
+    And I click the "Register" button
+    Then I should see an error message "Invalid email format"
+
+  Scenario: Registration with already registered email
+    Given I navigate to the "Register" page
+    When I enter a valid first name in the "First Name" input field
+    And I enter a valid last name in the "Last Name" input field
+    And I enter a valid organization name in the "Organization" input field
+    And I enter an already registered email in the "Email" input field
+    And I enter a valid password in the "Password" input field
+    And I enter the same password in the "Confirm Password" input field
+    And I click the "Register" button
+    Then I should see an error message "Email is already registered"
+
+  Scenario: Navigate back to Login page
+    Given I navigate to the "Register" page
+    When I click the "NinjaOne" logo
+    Then I should be redirected to the Login page
+
+  Scenario: Request activation link
+    Given I navigate to the "Register" page
+    When I click the "Request Activation" link
+    Then I should be redirected to the "Request Activation" page
