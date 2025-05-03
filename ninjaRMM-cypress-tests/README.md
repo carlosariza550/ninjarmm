@@ -10,7 +10,7 @@ ninjaRMM-cypress-tests
 │   ├── e2e
 │   │   ├── login.spec.js          # Tests for login functionality
 │   ├── fixtures
-│   │   └── testData.json           # Test data for the tests
+│   │   └── testData.json           # Test data for the login tests
 │   ├── support
 │       ├── commands.js              # Custom commands for tests
 │       └── e2e.js                   # Global configurations for Cypress
@@ -44,3 +44,4 @@ To get started with this project, follow these steps:
 ## Test Scenarios
 
 - **Login Functionality**: Tests for verifying elements on the login page and testing successful and unsuccessful login attempts.
+Trigger GitHub Actions
