@@ -25,8 +25,19 @@ jobs:
       with:
         node-version: 18
 
+    - name: Cache Cypress binary
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/Cypress
+        key: cypress-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          cypress-cache-${{ runner.os }}-
+
     - name: Install dependencies
       run: npm install
+
+    - name: Install Cypress binary
+      run: npx cypress install
 
     - name: Check runner version
       run: "echo Runner version: ${{ runner.os }} ${{ runner.arch }}"
