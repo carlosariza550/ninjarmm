@@ -1,6 +1,6 @@
 # NinjaRMM Cypress Tests
 
-This project contains end-to-end tests for the NinjaRMM application using Cypress. The tests cover various functionalities for the login page.
+This project contains end-to-end tests for the NinjaRMM application using Cypress. The tests cover various functionalities for the login page .
 
 ## Project Structure
 
