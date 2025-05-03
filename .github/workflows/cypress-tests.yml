@@ -34,11 +34,8 @@ jobs:
     - name: Run Cypress tests
       run: npx cypress run --reporter mocha-junit-reporter --reporter-options mochaFile=results/test-results.xml
 
-    - name: Debug test results
-      run: ls -l results/
-
-    - name: Upload test results
-      uses: actions/upload-artifact@v3
+    - name: Cache test results
+      uses: actions/cache@v3
       with:
-        name: cypress-test-results
         path: results/test-results.xml
+        key: cypress-test-results-${{ github.run_id }}
